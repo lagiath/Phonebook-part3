@@ -26,16 +26,16 @@ const personSchema = new mongoose.Schema({
     type: String,
     minLength: 3,
     required: true
-  }, 
+  },
   number: {
     type: String,
     validate: {
       validator: v => {
-      return /^\d{2,3}-\d+$/.test(v)
+        return /^\d{2,3}-\d+$/.test(v)
       }
     },
     required: true
-  } 
+  }
 })
 
 const Person = mongoose.model('Person', personSchema)
